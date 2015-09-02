@@ -1,0 +1,13 @@
+template(name="GooglePickFile")
+   +ManagedStep(name=template step=.)
+      if isSelected
+         | File
+         a(href="{{fileUrl}}")
+            | {{fileName}}
+         | has been selected
+         button.google-picker
+            | Change
+      else
+         .fa.fa-fw(class="{{#if displayPickerSpinner}}fa-spinner fa-spin{{/if}}")
+         button.google-picker
+            | Select your spreadsheet
